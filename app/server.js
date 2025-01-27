@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const https = require("https");
+const port = 443;
 
 const sslOptions = {
   key: fs.readFileSync("./privkey.key"),
@@ -12,6 +13,6 @@ const userRoute = require("./routes/User");
 app.use(express.static("public"));
 app.use("/user", userRoute);
 
-https.createServer(sslOptions, app).listen(443, () => {
-  console.log("Server running on port 443");
+https.createServer(sslOptions, app).listen(port, () => {
+  console.log("Server running on port " + port);
 });
