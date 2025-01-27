@@ -1,11 +1,11 @@
 module.exports = {
-    get: (req, res) => {
-        res.send("User: Sarah Test");
-    },
-    login: (req, res) => {
-        res.sendFile(path.join(__dirname+'/public/views/login.html'));
-    },
-    register: (req, res) => {
-        
-    }
+  get: (req, res) => {
+    res.sendFile("/public/views/user.html", { root: "." });
+  },
+  login: (req, res) => {
+    res.sendFile("/public/views/login.html", { root: "." });
+  },
+  register: (req, res) => {
+    res.sendFile("/public/views/register.html", { root: "." });
+  },
 };
